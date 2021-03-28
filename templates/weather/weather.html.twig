@@ -1,0 +1,64 @@
+<div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card text-white bg-info">
+                <div class="card-header">Weather Conditions</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src="http://openweathermap.org/img/wn/{{ weather.weather.icon }}@2x.png" alt="">
+                        </div>
+                        <div class="col-sm-9">
+                            <h5 class="card-title">{{ weather.weather.main }}</h5>
+                            <p class="card-text">{{ weather.weather.description }}</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card text-white bg-dark">
+                <div class="card-header">Temperature</div>
+
+                <div class="card-body">
+                    <div class="row">
+
+                        <div class="col-6">
+                            <p class="card-text">Temp : {{ weather.temperature.temp }} °C</p>
+                            <p class="card-text">Feels Like: {{ weather.temperature.feels_like }} °C</p>
+                            <p class="card-text">Humidity: {{ weather.temperature.humidity }} %</p>
+                        </div>
+                        <div class="col-6">
+                            <p class="card-text">Temp Min: {{ weather.temperature.temp_min }} °C</p>
+                            <p class="card-text">Temp Max: {{ weather.temperature.temp_max }} °C</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        {% if weather.wind is defined %}
+            <div class="col-sm-6 ">
+                <div class="card text-white bg-primary">
+                    <div class="card-header">Wind Speed</div>
+                    <div class="card-body">
+                        <p class="card-text">{{ weather.wind }} miles/hour</p>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {% if weather.rain is defined %}
+            <div class="col-sm-6">
+                <div class="card text-white bg-secondary">
+                    <div class="card-header">Rain Volume </div>
+
+                    <div class="card-body">
+                        <p class="card-text">{{ weather.rain }} mm last hour</p>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
