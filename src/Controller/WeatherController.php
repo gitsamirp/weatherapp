@@ -38,9 +38,8 @@ class WeatherController extends AbstractController
     /**
      * @Route("/cities", name="citysearch")
      */
-    public function retrieveCities(Environment $twig, OpenWeatherMapService $openWeatherMapService, Request $request)
+    public function retrieveCities(Environment $twig, OpenWeatherMapService $openWeatherMapService, Request $request) : Response
     {
-        //$request
         if ($searchQuery = $request->query->get("citySearch")) {
             return new Response($twig->render('weather/citiesDropdown.html.twig', [
                 'cities' => $openWeatherMapService->findCitiesByName($searchQuery),

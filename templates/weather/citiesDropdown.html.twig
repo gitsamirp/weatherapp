@@ -1,6 +1,6 @@
 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     {% for key, city in cities %}
-        <a class="dropdown-item" href="#" onclick="viewWeatherForCity({{ key }})">{{ city.name }}, {{ city.country }} {{ key }}</a>
+        <a class="dropdown-item" href="#" onclick="viewWeatherForCity({{ key }})">{{ city.name }}, {{ city.country }}</a>
     {% else %}
         <a class="dropdown-item" href="#">No City Found...</a>
     {% endfor %}

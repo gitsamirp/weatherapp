@@ -26,7 +26,7 @@ class OpenWeatherMapClient
 
         if ($response->getStatusCode() !== 200) {
             if ($response->getStatusCode() === 404) {
-                throw \RuntimeException("Api Route Not Found");
+                throw new \RuntimeException("Api Route Not Found");
             }
             throw new \RuntimeException(sprintf('Unable to retrieve weather information with content : %s .', $response->getContent()));
         }

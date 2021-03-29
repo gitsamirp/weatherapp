@@ -7,6 +7,12 @@
     <div class="container">
         <div class="row  justify-content-center">
             <div class="col-4">
+                <h1>City Weather!</h1>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-4">
                 <form class="form-inline text-center first-child" onsubmit="findCities(); return false;" role="form" id="citySearch" action="#" method="get">
                     <div class="form-group">
                         <label class="sr-only" for="city_search_string">Search</label>
@@ -67,6 +73,9 @@
             background-color: whitesmoke;
             border: 1px solid darkgrey;
             padding: 10px;
+        }
+        #weatherContainer {
+            margin-top: 10px;
         }
     </style>
 {% endblock %}

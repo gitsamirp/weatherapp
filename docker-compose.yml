@@ -1,6 +1,7 @@
 version: "3"
 services: 
     php:
+        container_name: weather_app
         build: './docker/php/'
         networks:
             - backend
