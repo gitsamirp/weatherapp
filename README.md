@@ -11,6 +11,10 @@ Docker or PHP 7.4
 Docker
 1. Clone or download git repository to local folder
 2. add OpenWeatherMap api key to .env at OPENWEATHERMAP_API_KEY
-2. using Terminal traverse to code folder and run: 
+3. using Terminal traverse to code folder and run: 
    **docker-compose run --build**
-3. Once docker container built and running visit "localhost:8080"
+4. Once docker container built run:
+   **docker exec -it weather_app bash**
+5. you should be in the container at location /var/www/html
+6. Run **composer install**
+7. once completed visit "localhost:8080"
