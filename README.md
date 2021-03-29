@@ -18,3 +18,8 @@ Docker
 5. you should be in the container at location /var/www/html
 6. Run **composer install**
 7. once completed visit "localhost:8080"
+
+### Test Instructions
+1. From inside the container:
+**docker exec -it weather_app bash**
+2. run bin/phpunit
