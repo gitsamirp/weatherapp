@@ -34,7 +34,7 @@
             var param = document.getElementById('city_search_string').value;
             $.ajax({
                 type: "GET",
-                url: "{{ path('citysearch') }}",
+                url: Routing.generate('search_city_name'),
                 data: {'citySearch': param },
                 success: function (data) {
                     $('.dropdown').html(data);
@@ -48,8 +48,7 @@
         {
             $.ajax({
                 type: "GET",
-                url: "{{ path('weather') }}",
-                data: {'cityId': cityId },
+                url: Routing.generate('weather_city', { cityId: cityId }),
                 success: function (data) {
                     $('#weatherContainer').html(data);
                     $('.dropdown-menu').hide();

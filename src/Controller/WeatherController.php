@@ -23,11 +23,11 @@ class WeatherController extends AbstractController
     }
 
     /**
-     * @Route("/city", name="weather")
+     * @Route("/weather/city/{cityId}", name="weather_city", options={"expose"=true})
      */
-    public function showWeather(Environment $twig, OpenWeatherMapService $openWeatherMapService, Request $request): Response
+    public function showWeather(int $cityId, Environment $twig, OpenWeatherMapService $openWeatherMapService, Request $request): Response
     {
-        if ($cityId = $request->query->get("cityId")) {
+        if ($cityId) {
             return new Response($twig->render('weather/weather.html.twig', [
                 'weather' => $openWeatherMapService->findWeatherByCityId($cityId)
             ]));
@@ -36,7 +36,7 @@ class WeatherController extends AbstractController
     }
 
     /**
-     * @Route("/cities", name="citysearch")
+     * @Route("/city/find", name="search_city_name", options={"expose"=true})
      */
     public function retrieveCities(Environment $twig, OpenWeatherMapService $openWeatherMapService, Request $request) : Response
     {
