@@ -6,11 +6,18 @@ class OpenWeatherMapService
 {
     private $openWeatherMapClient;
 
+    /**
+     * @param OpenWeatherMapClient $openWeatherMapClient
+     */
     public function __construct(OpenWeatherMapClient $openWeatherMapClient)
     {
         $this->openWeatherMapClient = $openWeatherMapClient;
     }
 
+    /**
+     * @param string $name
+     * @return array
+     */
     public function findCitiesByName(string $name) : array
     {
         //api.openweathermap.org/data/2.5/find?q=Warwick&appid={API key}
@@ -25,6 +32,10 @@ class OpenWeatherMapService
         return $data;
     }
 
+    /**
+     * @param int $cityId
+     * @return array
+     */
     public function findWeatherByCityId(int $cityId) : array
     {
         //api.openweathermap.org/data/2.5/weather?id={city id}&appid={API key}
