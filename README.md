@@ -4,6 +4,8 @@ Weather App
 ## Intro
 Retrieve current weather forecast using OpenWeatherMap API
 
+Written as part of a Code Test for a Job
+
 ### Requirements
 Docker or PHP 7.4
 
